@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { COMPANY_DETAILS, BRANDS_DATA } from '../data/mockData';
-import { CheckCircle2 } from 'lucide-react';
-import heroBgImage from '../assets/images/industrial_motion_hero_1785860233266.jpg';
+import heroVideo from '../assets/images/mixkit-automated-machine-places-parts-on-circuit-boards-47266-hd-ready.mp4';
 
 interface HeroProps {
   onOpenRFQ?: () => void;
@@ -9,82 +8,117 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Force autoplay with gesture fallbacks
+    const startPlayback = async () => {
+      try {
+        video.muted = true;
+        video.defaultMuted = true;
+        await video.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.warn('Autoplay waiting for user gesture:', err);
+      }
+    };
+
+    startPlayback();
+
+    const handleUserInteraction = () => {
+      if (video && video.paused) {
+        video.play().then(() => setIsPlaying(true)).catch(() => { });
+      }
+    };
+
+    window.addEventListener('click', handleUserInteraction, { once: true });
+    window.addEventListener('scroll', handleUserInteraction, { once: true });
+    window.addEventListener('touchstart', handleUserInteraction, { once: true });
+
+    return () => {
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('scroll', handleUserInteraction);
+      window.removeEventListener('touchstart', handleUserInteraction);
+    };
+  }, []);
+
   return (
-    <section id="hero" className="relative text-white overflow-hidden border-b border-slate-800 min-h-[550px] flex items-center">
-      {/* Background Image with Commercial Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBgImage})`
-        }}
-      />
-      {/* High-Contrast Corporate Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#070E1B] via-[#070E1B]/90 to-[#070E1B]/75" />
+    <section id="hero" className="relative text-white overflow-hidden border-b border-slate-800 min-h-[480px] sm:min-h-[520px] flex items-center justify-center bg-slate-950">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10 w-full">
-        <div className="max-w-3xl space-y-6 text-left">
-          
-          {/* Profile Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/40 text-xs font-mono shadow-md">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="text-amber-400 font-bold tracking-widest uppercase">COMPANY PROFILE</span>
+      {/* Background Video Layer - Full View SMT Pick & Place Machinery */}
+      <div className="absolute inset-0 overflow-hidden select-none pointer-events-none z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onPlay={() => setIsPlaying(true)}
+          className="w-full h-full object-cover opacity-85 filter brightness-95 contrast-110 scale-105 transition-opacity duration-500"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+
+        {/* Minimal Vignette Shadow for Edge Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-slate-950/70" />
+      </div>
+
+      {/* Hero Content Overlay (Directly on Video) */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 w-full text-center">
+        <div className="space-y-4 flex flex-col items-center">
+
+          {/* Company Profile Badge */}
+          {/*  
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/90 border border-amber-500/50 text-[11px] font-mono shadow-xl backdrop-blur-xs">
+            <span className="relative flex h-2 w-2">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 ${isPlaying ? 'opacity-100' : 'opacity-40'}`} />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+            </span>
+            <span className="text-amber-400 font-bold tracking-wider uppercase">COMPANY PROFILE</span>
             <span className="text-slate-600">|</span>
-            <span className="text-slate-200 font-sans font-medium">AxtroTech Solutions LLP</span>
+            <span className="text-slate-200 font-medium">AxtroTech Solutions LLP</span>
           </div>
-
+          */}
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-sans">
-            Precision Motion Control <br />
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight max-w-2xl drop-shadow-md">
+            Precision Motion Control <br className="hidden sm:inline" />
             <span className="text-amber-400">
               & Industrial Automation
             </span>
           </h1>
 
-          {/* Motto & Tagline */}
-          <div className="space-y-2 border-l-4 border-amber-500 pl-4 py-1">
-            <p className="text-lg sm:text-xl text-slate-100 font-semibold font-sans">
-              "{COMPANY_DETAILS.motto}"
-            </p>
-            <p className="text-sm text-amber-300 font-mono italic">
-              "{COMPANY_DETAILS.tagline}"
-            </p>
-          </div>
+          {/* Tagline */}
+          {/*
+          <p className="text-xs sm:text-sm text-slate-200 font-medium italic max-w-xl drop-shadow-sm">
+            "{COMPANY_DETAILS.tagline}"
+          </p>
+          */}
 
-          <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl font-sans">
-            Specialist engineering firm delivering custom PLC software development, multi-axis servo motion control, intelligent VFD drive systems, IEC control panels, and Industry 4.0 data telemetry for demanding industrial manufacturing.
+          {/* Concise Summary Description */}
+          <br></br>
+          <p className="text-slate-200 text-xs sm:text-sm leading-relaxed max-w-lg font-sans drop-shadow-sm">
+            Specialist engineering firm delivering custom PLC software, multi-axis motion control, VFD drives, and Industry 4.0 automation solutions.
           </p>
 
-          {/* Core Ecosystem Badges */}
-          <div className="pt-2">
-            <div className="text-xs font-mono text-slate-300 mb-2.5 uppercase tracking-wider font-semibold">
+          {/* Supported Automation Ecosystems */}
+          <div className="pt-3 flex flex-col items-center w-full">
+            <span className="text-[10px] font-mono text-slate-300 mb-2 uppercase tracking-widest font-semibold drop-shadow-xs">
               Supported Automation Ecosystems:
-            </div>
-            <div className="flex flex-wrap gap-2.5">
+            </span>
+            <div className="flex flex-wrap justify-center gap-2">
               {BRANDS_DATA.map((brand) => (
                 <div
                   key={brand.id}
-                  className="px-3.5 py-1.5 rounded bg-slate-900/90 border border-slate-700/80 text-xs font-mono font-bold text-slate-100 flex items-center gap-2 shadow-sm"
+                  className="px-3 py-1 rounded-md bg-slate-900/85 border border-slate-700/80 text-[11px] font-mono font-semibold text-slate-100 flex items-center gap-1.5 shadow-md backdrop-blur-xs hover:border-amber-400 transition-colors"
                 >
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: brand.colorHex }} />
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: brand.colorHex }} />
                   <span>{brand.name}</span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Key Engineering Capabilities */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-700/80 text-xs">
-            <div className="flex items-center gap-2 text-slate-200 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>Simotion, S120 & ACOPOS Servo Expertise</span>
-            </div>
-            <div className="flex items-center gap-2 text-slate-200 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>IEC 61131-3 Compliant Control Logic</span>
-            </div>
-            <div className="flex items-center gap-2 text-slate-200 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
-              <span>Turnkey Control Panels & FAT Testing</span>
             </div>
           </div>
 

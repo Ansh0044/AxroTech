@@ -186,6 +186,32 @@ export const BRANDS_DATA: BrandInfo[] = [
     software: ['EcoStruxure Control Expert (Unity Pro)', 'EcoStruxure Machine Expert (SoMachine)', 'SOMOVE Drive Tool'],
     motionCapabilities: ['CANopen & Sercos III Motion', 'Integrated Machine Safety', 'Energy Optimization Profiles'],
   },
+  {
+    id: 'pilz',
+    name: 'Pilz Automation Safety',
+    logoText: 'PILZ',
+    colorHex: '#EAB308',
+    badgeBg: 'bg-yellow-950/80 border-yellow-500/40 text-yellow-300',
+    description:
+      'Pioneer in safety automation technology. Expert programming and integration of PNOZmulti safety controllers, PSS4000 automation systems, and SIL3/PLe safety motion monitoring.',
+    plcModels: ['PNOZmulti 2 Configurable Safety Controllers', 'PSSuniversal / PSS4000 Automation System', 'PSEN safety sensors & Light Curtains'],
+    drivesSupported: ['PMCprimo Motion Controllers', 'PMCprotec Servo Drives', 'PAS4000 Motion Safety Modules'],
+    software: ['PNOZmulti Configurator', 'PAS4000 Software Suite', 'PASvisu HMI Builder'],
+    motionCapabilities: ['Safe Motion Monitoring (Safe Speed, Safe Direction)', 'SIL3 / PLe Certified Safety Logic', 'SafetyBUS p & SafetyNET p Fieldbus Integration'],
+  },
+  {
+    id: 'keyence',
+    name: 'Keyence Factory Automation',
+    logoText: 'KEYENCE',
+    colorHex: '#DC2626',
+    badgeBg: 'bg-red-950/80 border-red-500/40 text-red-300',
+    description:
+      'High-speed machine control and vision-guided robotics using Keyence KV-8000 PLCs, SV series multi-axis servo drives, and CV-X vision processing engines.',
+    plcModels: ['KV-8000 / KV-7000 Series High-Speed PLCs', 'KV-5000 / KV-3000 Compact Controllers', 'KV-X Nano Micro PLCs'],
+    drivesSupported: ['SV2 / SV Series Multi-Axis Servo Drives', 'SV-M Pulse/Direction & EtherCAT Servos'],
+    software: ['KV STUDIO PLC Programming Suite', 'VT STUDIO HMI Software', 'CV-X / XG-X Vision System Software'],
+    motionCapabilities: ['Ultra-fast 10µs PLC Scan Execution', 'Vision-Guided Robot Motion Trajectories', 'High-Speed Multi-Axis Pulse Positioning'],
+  },
 ];
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
@@ -337,9 +363,11 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'metals',
     name: 'Metals & Steel Processing',
     icon: 'Hammer',
-    tagline: 'Precision Cut-to-Length, Flying Shear & Rolling Mill Synchronisation',
+    tagline: 'Flying Shear & Rolling Mill Synchronisation',
     description:
-      'Extreme durability meets sub-millisecond motion control. We engineer automation systems for steel tube mills, coil slitting lines, flying saws, and continuous casting machines where high dynamics and heavy loads collide.',
+      'Sub-millisecond motion control for steel tube mills, coil slitting lines, flying saws, and continuous casting machinery under high dynamic loads.',
+    bgImage: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-welding-sparks-and-laser-cutting-metal-41221-large.mp4',
     keyApplications: [
       'High-Speed Servo Flying Shear & Cut-to-Length',
       'Coil Unwinder / Rewinder Constant Tension Loops',
@@ -356,12 +384,14 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'cement',
     name: 'Cement & Heavy Materials',
     icon: 'Layers',
-    tagline: 'High-Power VFD Systems, Kiln Drives & Heavy Conveyor Automation',
+    tagline: 'High-Power VFD Systems & Kiln Drives',
     description:
-      'Resilient automation engineered for harsh, dusty, high-vibration cement manufacturing plants. Specializing in high-capacity VFD panels, raw mill drive synchronization, and central SCADA telemetry.',
+      'Resilient automation for heavy manufacturing plants, raw mill drive synchronization, and central SCADA telemetry.',
+    bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-industrial-machinery-operating-in-a-factory-41315-large.mp4',
     keyApplications: [
       'Kiln Main Drive & Exhaust Fan Intelligent VFD Panels',
-      'Vertical Roller Mill (VRM) Lubrication & Drive Interlocks',
+      'Vertical Roller Mill Lubrication Interlocks',
       'Automated Bagging & Palletizing Motion Systems',
       'Cement Silo Batching & Load Cell Data Acquisition',
     ],
@@ -375,14 +405,16 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'oil-gas',
     name: 'Oil & Gas / Petrochemicals',
     icon: 'Flame',
-    tagline: 'SIL-Rated Safety PLC Systems, Valve Actuation & Pipeline Telemetry',
+    tagline: 'SIL Safety PLCs & Pipeline Telemetry',
     description:
-      'Uncompromising functional safety and explosion-proof automation. Designing SIL2/SIL3 control systems, hazardous area control panels, emergency shutdown (ESD) logic, and remote pipeline pumping telemetry.',
+      'Explosion-proof automation, SIL2/SIL3 emergency shutdown logic, and real-time remote pipeline pumping station telemetry.',
+    bgImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-oil-rig-operating-at-dusk-41223-large.mp4',
     keyApplications: [
       'Zone 1 / Zone 2 Explosion-Proof PLC Enclosures',
       'Booster Pump Station Redundant VFD Control',
-      'SIL2/SIL3 Emergency Shutdown & Fire & Gas Interlocks',
-      'IT-OT Pipeline Flow SCADA & SAP Data Bridge',
+      'SIL2/SIL3 Emergency Shutdown Interlocks',
+      'IT-OT Pipeline Flow SCADA Data Bridge',
     ],
     featuredProjectTitle: 'Automated Pipeline Pumping Station & Hazardous Area Control Panel',
     stats: [
@@ -394,13 +426,15 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'food-bev',
     name: 'Food & Beverage',
     icon: 'Utensils',
-    tagline: 'Hygienic Servo Motion, Bottling Monoblocks & High-Speed Conveying',
+    tagline: 'Hygienic Servo Motion & Monoblock Bottling',
     description:
-      'Cleanroom and IP67 washdown motion solutions for bottling, canning, dosing, and food packaging. Replacing mechanical lines with zero-backlash electronic camming shafts for max throughput.',
+      'Washdown motion solutions for bottling, canning, dosing, and packaging lines with zero-backlash electronic camming.',
+    bgImage: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-factory-conveyor-belt-carrying-bottles-41220-large.mp4',
     keyApplications: [
-      'Multi-Head Volumetric Filling & Capping Servo Monoblocks',
+      'Multi-Head Volumetric Filling & Capping Monoblocks',
       'High-Speed Continuous Rotary Labelling & Orientation',
-      'CIP (Clean-in-Place) Automated Washing Sequence PLCs',
+      'CIP (Clean-in-Place) Automated Washing PLCs',
       'Pick & Place Delta Robot Motion Control',
     ],
     featuredProjectTitle: 'Multi-Axis Synchronized Beverage Bottling & Capping Monoblock',
@@ -413,14 +447,16 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'packaging',
     name: 'Packaging & Converting',
     icon: 'Package',
-    tagline: 'Electronic Camming, Rotary Knives & Form-Fill-Seal Machines',
+    tagline: 'Electronic Camming & High-Speed Rotary Knives',
     description:
-      'Ultra-dynamic motion control for modern packaging machines. We program customized motion profiles for rotary knives, registration mark sensors, tension control, and pouch making.',
+      'Ultra-dynamic motion profiles for rotary knives, optical registration sensors, tension control, and pouch making.',
+    bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-robotic-arm-working-in-a-factory-41317-large.mp4',
     keyApplications: [
       'High-Speed Rotary Knife & Cross-Cutters',
-      'Horizontal Form-Fill-Seal (HFFS) & Vertical (VFFS) Servo Wrappers',
+      'Form-Fill-Seal (HFFS / VFFS) Servo Wrappers',
       'Optical Print Mark Registration Correction Axes',
-      'Unwind / Rewind Tension Control with Load-Cell Feedback',
+      'Unwind / Rewind Tension Control Loops',
     ],
     featuredProjectTitle: 'Multi-Format Automated Carton Wrapper with High-Speed Rotary Knife',
     stats: [
@@ -432,13 +468,15 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     id: 'pharma',
     name: 'Pharmaceutical Manufacturing',
     icon: 'ShieldCheck',
-    tagline: 'Validated Batch Control, Blister Packaging & 21 CFR Part 11 Compliance',
+    tagline: 'GAMP5 Batch Control & Blister Packaging',
     description:
-      'Precision pharmaceutical automation designed according to GAMP5 guidelines. Complete software documentation, qualification protocols (IQ/OQ), audit trails, and serialization track-and-trace integration.',
+      'Precision pharmaceutical automation, IQ/OQ qualification protocols, 21 CFR Part 11 audit trails, and serialization track-and-trace.',
+    bgImage: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-laboratory-technician-working-with-samples-41224-large.mp4',
     keyApplications: [
       'Blister Packaging & Thermoforming Multi-Axis Motion',
       'Tablet Pressing & Encapsulation Machine Logic',
-      '21 CFR Part 11 Audit Trail & User Security Management',
+      '21 CFR Part 11 Audit Trail & Security',
       'Serialization & Aggregation Vision System Integration',
     ],
     featuredProjectTitle: 'High-Speed Synchronized Blister Packaging & Serialization Line',
@@ -454,36 +492,64 @@ export const PANEL_TYPES = [
     id: 'plc-panel',
     name: 'PLC Control Panels',
     code: 'AXT-PLC-100',
-    description: 'Centralized & distributed PLC automation enclosures featuring modular terminal blocks, optical isolation, and neat trunking.',
-    enclosure: 'Rittal TS8 / Schneider Spacial SF, IP55/IP66',
-    components: ['Siemens S7-1500 / B&R C70 CPU', 'SITOP 24V DC Power Supplies', 'Weidmüller Push-in Terminal Blocks', 'Surge Protection Devices (SPD)'],
-    testing: '100% FAT Point-to-Point IO Continuity & Insulation Test',
+    description: 'Centralized PLC automation enclosures with modular terminal blocks and surge isolation.',
+    enclosure: 'Rittal TS8 / Schneider Spacial SF (IP66)',
+    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    components: [
+      'Siemens S7-1500 / B&R C70 CPU',
+      '24V DC Regulated Power Supply',
+      'Push-in Modular Terminal Blocks',
+      'Surge Protection Device (SPD)'
+    ],
+    testing: '100% FAT Point-to-Point IO & Continuity Test',
+    hotspots: ['MAIN PLC CPU', 'I/O RACK', 'TERMINAL BLOCKS']
   },
   {
     id: 'vfd-panel',
     name: 'VFD & Servo Drive Panels',
     code: 'AXT-VFD-200',
-    description: 'Enclosed variable frequency and servo drive panels with integrated line reactors, EMI filters, and forced climate ventilation.',
-    enclosure: 'Air-Conditioned / Heat Exchanger Enclosures, IP54',
-    components: ['Siemens SINAMICS S120 / G120 / B&R ACOPOS', 'Line Reactors & Output Chokes', 'Braking Resistors', 'Rittal Roof Filter Fans / AC Units'],
-    testing: 'Full Load Motor Running Test & Thermal Imaging Scan',
+    description: 'Enclosed variable frequency and servo drive panels with climate control and EMI filtering.',
+    enclosure: 'Air-Conditioned Climate Enclosure (IP54)',
+    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    components: [
+      'Siemens SINAMICS S120 / G120 Drives',
+      'AC Line Reactors & Output Chokes',
+      'High-Power Dynamic Braking Resistors',
+      'Rittal Forced Air Roof Filter Fan'
+    ],
+    testing: 'Full Load Motor Running & Thermal Scan',
+    hotspots: ['SERVO DRIVES', 'LINE REACTORS', 'COOLING UNIT']
   },
   {
     id: 'mcc-panel',
-    name: 'Motor Control Center (MCC) Panels',
+    name: 'Motor Control Center (MCC)',
     code: 'AXT-MCC-300',
-    description: 'Drawout / Fixed type intelligent motor control centers with SIMOCODE / E300 smart overload relays for heavy plant motors.',
-    enclosure: 'Form 3b / Form 4 Compartmentalized Enclosures',
-    components: ['Siemens SIMOCODE Pro / AB E300 Smart Overloads', 'Motor Protection Circuit Breakers (MPCB)', 'Contactors & Soft Starters'],
-    testing: 'Dielectric Voltage Withstand & Busbar Torque Verification',
+    description: 'Intelligent motor control center with smart overload relays and feeder protection.',
+    enclosure: 'Form 3b / 4 Compartmentalized Enclosure',
+    imageUrl: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    components: [
+      'Siemens SIMOCODE Pro Smart Overload Relays',
+      'Motor Protection Circuit Breakers (MPCB)',
+      'Heavy-Duty Soft Starters & Contactors',
+      'Remote Status Telemetry Module'
+    ],
+    testing: 'Dielectric Voltage Withstand & Torque Test',
+    hotspots: ['SMART OVERLOADS', 'BREAKERS', 'CONTACTORS']
   },
   {
     id: 'pcc-panel',
-    name: 'Power Control Center (PCC) Panels',
+    name: 'Power Control Center (PCC)',
     code: 'AXT-PCC-400',
-    description: 'Main low-voltage power distribution panels up to 4000A busbar rating with air circuit breakers (ACB) and power quality monitoring.',
-    enclosure: 'Heavy Duty Floor Standing Modular Steel Panel, 50kA 1 sec short circuit',
-    components: ['Air Circuit Breakers (ACB) 800A-4000A', 'High-Purity Electrolytic Copper Busbars', 'Digital Power Quality Meters (THD, Cos φ)'],
-    testing: 'Primary Current Injection & Busbar Heat Run Test',
+    description: 'Main low-voltage power distribution panel up to 4000A with air circuit breakers.',
+    enclosure: 'Heavy-Duty Modular Steel Panel (50kA/1s)',
+    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    components: [
+      'Air Circuit Breakers (ACB 800A-4000A)',
+      'Electrolytic Copper Busbars',
+      'Digital Power Quality Meters (THD)',
+      'Transient Voltage Protection'
+    ],
+    testing: 'Primary Current Injection & Heat Run Test',
+    hotspots: ['ACB BREAKER', 'COPPER BUSBARS', 'POWER METER']
   },
 ];

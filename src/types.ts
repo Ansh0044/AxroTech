@@ -51,6 +51,8 @@ export interface IndustrySector {
   icon: string;
   tagline: string;
   description: string;
+  bgImage?: string;
+  videoUrl?: string;
   keyApplications: string[];
   featuredProjectTitle: string;
   stats: {

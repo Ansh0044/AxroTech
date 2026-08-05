@@ -35,9 +35,12 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection 
         <div className="max-w-7xl mx-auto flex justify-between items-center text-slate-400 font-sans">
           <div className="flex items-center space-x-4">
             <span className="text-amber-400 font-semibold tracking-wide flex items-center gap-1.5">
+              {/*
               <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
               PRECISION MOTION CONTROL & INDUSTRIAL AUTOMATION
-            </span>
+              */}
+              </span>
+              
           </div>
 
           <div className="flex items-center space-x-6 text-xs font-mono">
@@ -61,15 +64,17 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection 
           <div className="flex flex-col justify-center cursor-pointer" onClick={() => handleNavClick('hero')}>
             <div className="flex items-baseline gap-2">
               <span className="text-2xl sm:text-3xl font-black text-white tracking-tight font-sans">
-                AxtroTech
+                AxtroTech Solutions LLP
               </span>
               <span className="text-amber-400 font-bold text-sm tracking-widest font-mono">
-                SOLUTIONS LLP
+                
               </span>
             </div>
+            {/*
             <span className="text-[11px] text-slate-300 font-mono tracking-wider uppercase">
               INDUSTRIAL AUTOMATION & MOTION CONTROL
             </span>
+            */}
           </div>
 
           {/* Navigation Links */}

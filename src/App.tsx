@@ -21,7 +21,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 font-sans selection:bg-amber-500 selection:text-slate-950">
-      
+
       {/* Dark Theme Header - Retained as requested */}
       <Header
         activeSection={activeSection}
@@ -39,14 +39,14 @@ export default function App() {
         {/* 3. Supported Automation Brand Ecosystems (Siemens, B&R, Rockwell, Schneider) */}
         <BrandMatrix />
 
-        {/* 4. Electrical & Drive Control Panels (PLC, VFD, MCC, PCC) */}
+        {/* 4. Industries We Serve (Metals, Cement, Oil & Gas, Food & Bev, Packaging, Pharma) */}
+        <IndustriesSection />
+
+        {/* 5. Electrical & Drive Control Panels (PLC, VFD, MCC, PCC) */}
         <ControlPanelsSection />
 
-        {/* 5. Industrial IoT & Industry 4.0 Telemetry Stream */}
+        {/* 6. Industrial IoT & Industry 4.0 Telemetry Stream */}
         <IIoTTelemetrySection />
-
-        {/* 6. Industries We Serve (Metals, Cement, Oil & Gas, Food & Bev, Packaging, Pharma) */}
-        <IndustriesSection />
       </main>
 
       {/* Dark Theme Footer - Retained as requested */}
