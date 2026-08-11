@@ -1,5 +1,10 @@
 import React from 'react';
 import { BRANDS_DATA } from '../data/mockData';
+import siemens from '../assets/images/Siemens 2026-08-11 184515.png'
+import br from '../assets/images/BR 2026-08-11 185505.png'
+import se from '../assets/images/SE 2026-08-11 190049.png'
+import pilz from '../assets/images/PILZ 2026-08-11 190249.png'
+import keyence from '../assets/images/keyence 2026-08-11 190514.png'
 
 interface BrandMatrixProps {
   onOpenRFQ?: (brandName?: string) => void;
@@ -12,12 +17,10 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
       case 'siemens':
         return (
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full">
-            <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#009999] rounded-xs text-white flex items-center justify-center font-black font-sans text-[10px] sm:text-xs tracking-tighter shadow-2xs flex-shrink-0">
-              S
-            </div>
+
             <div className="flex flex-col text-left overflow-hidden">
               <span className="font-extrabold text-[#009999] tracking-widest text-[11px] sm:text-xs font-sans leading-none truncate">SIEMENS</span>
-              <span className="text-[8px] sm:text-[9px] text-slate-500 font-mono tracking-wider truncate mt-0.5">TIA Portal</span>
+              <span className="text-[8px] sm:text-[9px] text-slate-500 font-mono tracking-wider truncate mt-0.5"></span>
             </div>
           </div>
         );
@@ -25,7 +28,10 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
         return (
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#FF6600] rounded-xs text-white flex items-center justify-center font-black font-mono text-[9px] sm:text-xs shadow-2xs flex-shrink-0">
-              B&R
+              <img
+                src={br}
+                alt='B&R'
+              />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
               <span className="font-black text-[#FF6600] tracking-wider text-[11px] sm:text-xs font-sans leading-none truncate">B&R</span>
@@ -49,7 +55,9 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
         return (
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#009F4D] rounded-xs text-white flex items-center justify-center font-black font-sans text-[9px] sm:text-xs shadow-2xs flex-shrink-0">
-              SE
+              <img
+                src={se}
+              />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
               <span className="font-bold text-[#009F4D] tracking-tight text-[10px] sm:text-xs font-sans leading-none truncate">Schneider</span>
@@ -61,7 +69,9 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
         return (
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#F2AC00] rounded-xs text-slate-950 flex items-center justify-center font-black font-sans text-[8px] sm:text-[10px] shadow-2xs border border-yellow-600/30 flex-shrink-0">
-              PILZ
+              <img
+                src={pilz}
+              />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
               <span className="font-black text-slate-900 tracking-wider text-[11px] sm:text-xs font-sans leading-none truncate">PILZ</span>
@@ -73,7 +83,9 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
         return (
           <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full">
             <div className="w-6 h-6 sm:w-7 sm:h-7 bg-[#E60012] rounded-xs text-white flex items-center justify-center font-black italic font-sans text-[10px] sm:text-xs shadow-2xs flex-shrink-0">
-              K
+              <img
+                src={keyence}
+              />
             </div>
             <div className="flex flex-col text-left overflow-hidden">
               <span className="font-black text-[#E60012] italic tracking-tight text-[10px] sm:text-xs font-sans leading-none truncate">KEYENCE</span>
@@ -89,7 +101,7 @@ export const BrandMatrix: React.FC<BrandMatrixProps> = () => {
   return (
     <section id="brands" className="py-8 sm:py-16 bg-white text-slate-900 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
           <h2 className="text-lg sm:text-3xl font-extrabold text-slate-900 tracking-tight font-sans">

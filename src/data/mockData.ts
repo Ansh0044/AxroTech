@@ -1,4 +1,12 @@
 import { BrandInfo, IndustrySector, PortfolioProject, ServiceItem } from '../types';
+import metals from '../assets/images/Metal 2026-08-11 170036.png'
+import cement from '../assets/images/Cement 2026-08-11 173725.png'
+import oil from '../assets/images/Oil_gas 2026-08-11 174021.png'
+import food from '../assets/images/image.png'
+import plc from '../assets/images/istockphoto-1139588963-1024x1024.jpg'
+import panel from '../assets/images/Panel22026-08-11 182649.png'
+import soft from '../assets/images/Softstarter 2026-08-11 183029.png'
+import mccb from '../assets/images/MCCB 2026-08-11 183703.png'
 
 export const COMPANY_DETAILS = {
   name: 'AxtroTech Solutions LLP',
@@ -160,19 +168,7 @@ export const BRANDS_DATA: BrandInfo[] = [
     software: ['Automation Studio 4.x / 5.x', 'B&R mapex Motion Library', 'mapp Technology Blocks'],
     motionCapabilities: ['POWERLINK Real-time Ethernet (100 µs cycle)', 'CNC & Robotics Kinematic Transformations', 'Multi-axis Interpolation'],
   },
-  {
-    id: 'rockwell',
-    name: 'Rockwell Automation (Allen-Bradley)',
-    logoText: 'Rockwell',
-    colorHex: '#DC2626',
-    badgeBg: 'bg-red-950/80 border-red-500/40 text-red-300',
-    description:
-      'Expertise in North American automation standards with Allen-Bradley ControlLogix, CompactLogix PLCs, and Kinetix motion drives.',
-    plcModels: ['ControlLogix 5580 / 5570', 'CompactLogix 5380 / 5370', 'Micro800 Series'],
-    drivesSupported: ['Kinetix 5500 / 5700 Servo Drives', 'PowerFlex 525 / 753 / 755 VFDs'],
-    software: ['Studio 5000 Logix Designer', 'FactoryTalk View ME/SE', 'Connected Components Workbench'],
-    motionCapabilities: ['EtherNet/IP CIP Motion', 'Integrated Motion on EtherNet/IP', 'Electronic Gearing'],
-  },
+
   {
     id: 'schneider',
     name: 'Schneider Electric',
@@ -366,7 +362,7 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     tagline: 'Flying Shear & Rolling Mill Synchronisation',
     description:
       'Sub-millisecond motion control for steel tube mills, coil slitting lines, flying saws, and continuous casting machinery under high dynamic loads.',
-    bgImage: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
+    bgImage: metals,
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-welding-sparks-and-laser-cutting-metal-41221-large.mp4',
     keyApplications: [
       'High-Speed Servo Flying Shear & Cut-to-Length',
@@ -387,7 +383,7 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     tagline: 'High-Power VFD Systems & Kiln Drives',
     description:
       'Resilient automation for heavy manufacturing plants, raw mill drive synchronization, and central SCADA telemetry.',
-    bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+    bgImage: cement,
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-industrial-machinery-operating-in-a-factory-41315-large.mp4',
     keyApplications: [
       'Kiln Main Drive & Exhaust Fan Intelligent VFD Panels',
@@ -408,7 +404,7 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     tagline: 'SIL Safety PLCs & Pipeline Telemetry',
     description:
       'Explosion-proof automation, SIL2/SIL3 emergency shutdown logic, and real-time remote pipeline pumping station telemetry.',
-    bgImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80',
+    bgImage: oil,
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-oil-rig-operating-at-dusk-41223-large.mp4',
     keyApplications: [
       'Zone 1 / Zone 2 Explosion-Proof PLC Enclosures',
@@ -429,7 +425,7 @@ export const INDUSTRIES_DATA: IndustrySector[] = [
     tagline: 'Hygienic Servo Motion & Monoblock Bottling',
     description:
       'Washdown motion solutions for bottling, canning, dosing, and packaging lines with zero-backlash electronic camming.',
-    bgImage: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80',
+    bgImage: food,
     videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-factory-conveyor-belt-carrying-bottles-41220-large.mp4',
     keyApplications: [
       'Multi-Head Volumetric Filling & Capping Monoblocks',
@@ -494,7 +490,7 @@ export const PANEL_TYPES = [
     code: 'AXT-PLC-100',
     description: 'Centralized PLC automation enclosures with modular terminal blocks and surge isolation.',
     enclosure: 'Rittal TS8 / Schneider Spacial SF (IP66)',
-    imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
+    imageUrl : plc,
     components: [
       'Siemens S7-1500 / B&R C70 CPU',
       '24V DC Regulated Power Supply',
@@ -510,7 +506,7 @@ export const PANEL_TYPES = [
     code: 'AXT-VFD-200',
     description: 'Enclosed variable frequency and servo drive panels with climate control and EMI filtering.',
     enclosure: 'Air-Conditioned Climate Enclosure (IP54)',
-    imageUrl: 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80',
+    imageUrl: panel,
     components: [
       'Siemens SINAMICS S120 / G120 Drives',
       'AC Line Reactors & Output Chokes',
@@ -522,11 +518,11 @@ export const PANEL_TYPES = [
   },
   {
     id: 'mcc-panel',
-    name: 'Motor Control Center (MCC)',
+    name: 'Motor Control and Switchgear',
     code: 'AXT-MCC-300',
     description: 'Intelligent motor control center with smart overload relays and feeder protection.',
     enclosure: 'Form 3b / 4 Compartmentalized Enclosure',
-    imageUrl: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    imageUrl: soft,
     components: [
       'Siemens SIMOCODE Pro Smart Overload Relays',
       'Motor Protection Circuit Breakers (MPCB)',
@@ -538,11 +534,11 @@ export const PANEL_TYPES = [
   },
   {
     id: 'pcc-panel',
-    name: 'Power Control Center (PCC)',
+    name: 'Power Control Switchgear ',
     code: 'AXT-PCC-400',
     description: 'Main low-voltage power distribution panel up to 4000A with air circuit breakers.',
     enclosure: 'Heavy-Duty Modular Steel Panel (50kA/1s)',
-    imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    imageUrl: mccb,
     components: [
       'Air Circuit Breakers (ACB 800A-4000A)',
       'Electrolytic Copper Busbars',

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { SERVICES_DATA } from '../data/mockData';
 import { ServiceItem } from '../types';
-import ipcImg from '../assets/images/industrial_pc_module_1785947346608.jpg';
+import ipcImg from '../assets/images/istockphoto-1139588963-1024x1024.jpg';
 import ioImg from '../assets/images/industrial_io_modules_1785947371906.jpg';
+import plcImg from '../assets/images/gettyimages-1459535120-170667a.jpg'
 import motionImg from '../assets/images/industrial_servo_motor_1785947390638.jpg';
 import automationImg from '../assets/images/automation_software_blocks_1785947410468.jpg';
 
@@ -53,7 +54,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = () => {
       title: 'Industrial IoT & SCADA',
       subtitle: 'Cloud, Edge & ERP Integration',
       description: 'IT-OT connectivity, real-time SCADA telemetry dashboards, edge MQTT gateways, and automated SAP/ERP integration.',
-      image: ioImg,
+      image: plcImg,
       serviceRef: SERVICES_DATA.find((s) => s.id === 'industrial-iot') || SERVICES_DATA[3],
     },
   ];
