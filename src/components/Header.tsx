@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cpu, Activity, ShieldCheck, Menu, X, PhoneCall, Sliders, Layers, Globe } from 'lucide-react';
+import { Home, Info, Package, Menu, X, PhoneCall } from 'lucide-react';
 import { COMPANY_DETAILS } from '../data/mockData';
 
 interface HeaderProps {
@@ -12,20 +12,15 @@ export const Header: React.FC<HeaderProps> = ({ activeSection, setActiveSection 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { id: 'services', label: 'Services', icon: Cpu },
-    { id: 'brands', label: 'Automation Brands', icon: Layers },
-    { id: 'panels', label: 'Control Panels', icon: Sliders },
-    { id: 'iiot', label: 'IIoT & Industry 4.0', icon: Globe },
-    { id: 'industries', label: 'Industries', icon: ShieldCheck },
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'about', label: 'About Us', icon: Info },
+    { id: 'products', label: 'Products', icon: Package },
   ];
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

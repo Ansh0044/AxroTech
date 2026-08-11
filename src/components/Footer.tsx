@@ -15,13 +15,16 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection }) => {
       <div className="bg-[#081222] border-b border-slate-800 py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
+            {/*
             <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
               <Activity className="w-5 h-5 animate-pulse" />
             </div>
+            
             <div>
               <h4 className="text-white font-bold text-sm">Need Urgent On-Site Emergency Commissioning or Motion Tuning?</h4>
               <p className="text-slate-400 text-xs">AxtroTech application engineers are ready for rapid plant site deployment.</p>
             </div>
+            */}
           </div>
 
           <div className="flex items-center gap-3">
@@ -73,14 +76,14 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection }) => {
             </div>
           </div>
 
-          {/* Core Services */}
+          {/* Navigation Quick Links */}
           <div>
-            <h5 className="text-white font-bold font-mono text-xs uppercase mb-3 text-amber-400">Services</h5>
+            <h5 className="text-white font-bold font-mono text-xs uppercase mb-3 text-amber-400">Navigation</h5>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><button onClick={() => setActiveSection('services')} className="hover:text-amber-400">PLC Programming Services</button></li>
-              <li><button onClick={() => setActiveSection('services')} className="hover:text-amber-400">Motion Control & Servo Drives</button></li>
-              <li><button onClick={() => setActiveSection('panels')} className="hover:text-amber-400">Electrical Control Panels</button></li>
-              <li><button onClick={() => setActiveSection('iiot')} className="hover:text-amber-400">IIoT & Industry 4.0</button></li>
+              <li><button onClick={() => setActiveSection('home')} className="hover:text-amber-400">Home</button></li>
+              <li><button onClick={() => setActiveSection('about')} className="hover:text-amber-400">About Us</button></li>
+              <li><button onClick={() => setActiveSection('products')} className="hover:text-amber-400">Products Catalog</button></li>
+              <li><button onClick={() => setActiveSection('home')} className="hover:text-amber-400">Engineering Services</button></li>
             </ul>
           </div>
 

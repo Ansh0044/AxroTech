@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { COMPANY_DETAILS, BRANDS_DATA } from '../data/mockData';
+// 1. IMPORT A REAL IMAGE FOR THE POSTER (Create this file or use an existing jpg/png)
+import heroPoster from '../assets/images/mixkit-automated-machine-places-parts-on-circuit-boards-47266-hd-ready.mp4'; 
+// 2. IMPORT THE ACTUAL LOCAL VIDEO ACCURATELY
 import heroVideo from '../assets/images/mixkit-automated-machine-places-parts-on-circuit-boards-47266-hd-ready.mp4';
 
 interface HeroProps {
@@ -15,23 +18,28 @@ export const Hero: React.FC<HeroProps> = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Force autoplay with gesture fallbacks
+    // Strict attributes configuration to bypass aggressive browser policies
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
     const startPlayback = async () => {
       try {
-        video.muted = true;
-        video.defaultMuted = true;
         await video.play();
         setIsPlaying(true);
       } catch (err) {
-        console.warn('Autoplay waiting for user gesture:', err);
+        console.warn('Autoplay blocked. Awaiting user interaction event:', err);
       }
     };
 
+    // Trigger initial play loop
     startPlayback();
 
     const handleUserInteraction = () => {
       if (video && video.paused) {
-        video.play().then(() => setIsPlaying(true)).catch(() => { });
+        video.play()
+          .then(() => setIsPlaying(true))
+          .catch((e) => console.error("Playback failed on event:", e));
       }
     };
 
@@ -49,7 +57,7 @@ export const Hero: React.FC<HeroProps> = () => {
   return (
     <section id="hero" className="relative text-white overflow-hidden border-b border-slate-800 min-h-[480px] sm:min-h-[520px] flex items-center justify-center bg-slate-950">
 
-      {/* Background Video Layer - Full View SMT Pick & Place Machinery */}
+      {/* Background Video & Image Fallback Layer */}
       <div className="absolute inset-0 overflow-hidden select-none pointer-events-none z-0">
         <video
           ref={videoRef}
@@ -57,32 +65,25 @@ export const Hero: React.FC<HeroProps> = () => {
           loop
           muted
           playsInline
+          poster={heroPoster} // Uses valid static image asset
           onPlay={() => setIsPlaying(true)}
-          className="w-full h-full object-cover opacity-85 filter brightness-95 contrast-110 scale-105 transition-opacity duration-500"
+          className="w-full h-full object-cover opacity-85 filter brightness-145 contrast-110 scale-105 transition-opacity duration-500"
         >
+          {/* Feed your locally bundled, safe asset file straight to the source layer */}
           <source src={heroVideo} type="video/mp4" />
+          
+          {/* Native HTML5 fallback string if the browser doesn't support video tags entirely */}
+          Your browser does not support the video tag.
         </video>
 
         {/* Minimal Vignette Shadow for Edge Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-slate-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-slate-950/80" />
       </div>
 
-      {/* Hero Content Overlay (Directly on Video) */}
+      {/* Hero Content Overlay */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 w-full text-center">
         <div className="space-y-4 flex flex-col items-center">
 
-          {/* Company Profile Badge */}
-          {/*  
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/90 border border-amber-500/50 text-[11px] font-mono shadow-xl backdrop-blur-xs">
-            <span className="relative flex h-2 w-2">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 ${isPlaying ? 'opacity-100' : 'opacity-40'}`} />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
-            </span>
-            <span className="text-amber-400 font-bold tracking-wider uppercase">COMPANY PROFILE</span>
-            <span className="text-slate-600">|</span>
-            <span className="text-slate-200 font-medium">AxtroTech Solutions LLP</span>
-          </div>
-          */}
           {/* Main Headline */}
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight max-w-2xl drop-shadow-md">
             Precision Motion Control <br className="hidden sm:inline" />
@@ -91,15 +92,8 @@ export const Hero: React.FC<HeroProps> = () => {
             </span>
           </h1>
 
-          {/* Tagline */}
-          {/*
-          <p className="text-xs sm:text-sm text-slate-200 font-medium italic max-w-xl drop-shadow-sm">
-            "{COMPANY_DETAILS.tagline}"
-          </p>
-          */}
-
+          <br />
           {/* Concise Summary Description */}
-          <br></br>
           <p className="text-slate-200 text-xs sm:text-sm leading-relaxed max-w-lg font-sans drop-shadow-sm">
             Specialist engineering firm delivering custom PLC software, multi-axis motion control, VFD drives, and Industry 4.0 automation solutions.
           </p>
@@ -127,3 +121,4 @@ export const Hero: React.FC<HeroProps> = () => {
     </section>
   );
 };
+
