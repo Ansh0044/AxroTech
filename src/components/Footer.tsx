@@ -69,8 +69,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection }) => {
               "{COMPANY_DETAILS.tagline}"
             </p>
 
-            <div className="pt-2 text-slate-400 space-y-1 font-mono text-[11px]">
-              <div>HQ: {COMPANY_DETAILS.headquarters}</div>
+            <div className="pt-2 text-slate-400 space-y-1 font-sansariff text-[11px]">
+              <div>{COMPANY_DETAILS.headquarters}</div>
               <div>Email: {COMPANY_DETAILS.email}</div>
               <div>Support: {COMPANY_DETAILS.supportEmail}</div>
             </div>
@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection }) => {
 
           {/* Navigation Quick Links */}
           <div>
-            <h5 className="text-white font-bold font-mono text-xs uppercase mb-3 text-amber-400">Navigation</h5>
+            <h5 className="text-white font-bold font-sansariff text-xs uppercase mb-3 text-amber-400">Navigation</h5>
             <ul className="space-y-2 text-xs text-slate-300">
               <li><button onClick={() => setActiveSection('home')} className="hover:text-amber-400">Home</button></li>
               <li><button onClick={() => setActiveSection('about')} className="hover:text-amber-400">About Us</button></li>
@@ -89,18 +89,18 @@ export const Footer: React.FC<FooterProps> = ({ setActiveSection }) => {
 
           {/* Supported Hardware */}
           <div>
-            <h5 className="text-white font-bold font-mono text-xs uppercase mb-3 text-teal-400">Automation Platforms</h5>
-            <ul className="space-y-2 text-xs text-slate-300 font-mono">
+            <h5 className="text-white font-bold font-sansariff text-xs uppercase mb-3 text-teal-400">Automation Platforms</h5>
+            <ul className="space-y-2 text-xs text-slate-300 font-sansariff">
               <li>Siemens (Simotion, S120, S7-1500)</li>
               <li>B&R (ACOPOS, PPC2100, C70)</li>
-              <li>Rockwell (Allen-Bradley Kinetix)</li>
+              <li>Pilz </li>
               <li>Schneider (Modicon, Lexium)</li>
             </ul>
           </div>
 
           {/* Sectors */}
           <div>
-            <h5 className="text-white font-bold font-mono text-xs uppercase mb-3 text-amber-400">Industries Served</h5>
+            <h5 className="text-white font-bold font-sansariff text-xs uppercase mb-3 text-amber-400">Industries Served</h5>
             <ul className="space-y-2 text-xs text-slate-300">
               <li>Metals & Steel Mills</li>
               <li>Cement & Heavy Materials</li>

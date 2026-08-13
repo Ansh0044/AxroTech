@@ -8,6 +8,23 @@ import servoImg from '../assets/images/industrial_servo_motor_1785947390638.jpg'
 import ioModuleImg from '../assets/images/industrial_io_modules_1785947371906.jpg';
 import ipcImg from '../assets/images/industrial_pc_module_1785947346608 (1).jpg';
 import driveRackImg from '../assets/images/servo_drive_rack_1785860248984.jpg';
+import twelve from '../assets/images/1214c.jpg';
+import fifteen from '../assets/images/1515.jpg';
+import g120 from '../assets/images/G120.jpg';
+import v90 from '../assets/images/V90.jpg';
+import v20 from '../assets/images/V20.jpg';
+import s120 from '../assets/images/S120.jpg';
+import simotion from '../assets/images/SIMOTION.jpg';
+import p3 from '../assets/images/P3.png';
+import c70 from '../assets/images/C70.jpg';
+import pc from '../assets/images/PC2100.jpg';
+import x20 from '../assets/images/X20.jpg';
+import acopos from '../assets/images/ACOPOSmicro.jpg';
+import s4 from '../assets/images/S4.jpg';
+import mb1 from '../assets/images/MB1.jpg';
+import lc from '../assets/images/LC.jpg';
+import estop from '../assets/images/Estop.jpg'
+
 
 interface BrandProduct {
   id: string;
@@ -29,17 +46,17 @@ interface BrandGroup {
 const BRAND_PRODUCTS_DATA: BrandGroup[] = [
   {
     brandId: 'siemens',
-    brandName: 'Siemens Industrial Automation & Drives',
+    brandName: 'Siemens AG',
     shortName: 'Siemens',
     logoImg: siemensImg,
     products: [
       {
         id: 'siemens-s7-1211c',
-        name: 'SIMATIC S7-1211C',
-        modelCode: 'S7-1211C',
+        name: 'SIMATIC S7-1515',
+        modelCode: 'S7-1515',
         type: 'PLC Controller',
-        tagline: 'Compact CPU, PROFINET & Onboard I/O',
-        image: siemensImg,
+        tagline: 'Modular High End CPU , PROFINET',
+        image: fifteen,
       },
       {
         id: 'siemens-s7-1214c',
@@ -47,7 +64,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'S7-1214C',
         type: 'PLC Controller',
         tagline: 'High Performance Compact PLC CPU',
-        image: siemensImg,
+        image: twelve,
       },
       {
         id: 'siemens-g120',
@@ -55,7 +72,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'G120 VFD',
         type: 'AC Frequency Drive',
         tagline: 'Modular Inverter Drive with Integrated STO',
-        image: driveRackImg,
+        image: g120,
       },
       {
         id: 'siemens-v90',
@@ -63,7 +80,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'V90 Servo',
         type: 'Servo System',
         tagline: 'High Dynamic Servo Drive & 1FL6 Motor',
-        image: servoImg,
+        image: v90,
       },
       {
         id: 'siemens-v20',
@@ -71,7 +88,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'V20 Inverter',
         type: 'Basic VFD',
         tagline: 'Rugged Basic Inverter for Pumps & Fans',
-        image: driveRackImg,
+        image: v20,
       },
       {
         id: 'siemens-s120',
@@ -79,7 +96,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'S120 Servo',
         type: 'Multi-Axis Drive',
         tagline: 'Modular Servo Drive with Common DC Bus',
-        image: driveRackImg,
+        image: s120,
       },
       {
         id: 'siemens-simotion-d',
@@ -87,13 +104,13 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'Simotion-D',
         type: 'Motion Controller',
         tagline: 'Multi-Axis High Speed Motion Controller',
-        image: siemensImg,
+        image: simotion,
       },
     ],
   },
   {
     brandId: 'br',
-    brandName: 'B&R Industrial Automation (ABB)',
+    brandName: 'B&R Industrial Automation',
     shortName: 'B&R',
     logoImg: brImg,
     products: [
@@ -103,7 +120,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'ACOPOS P3',
         type: 'Servo Drive',
         tagline: 'Ultra-Compact 3-Axis Servo Controller',
-        image: brImg,
+        image: p3,
       },
       {
         id: 'br-power-panel-c70',
@@ -111,7 +128,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'C70 Terminal',
         type: 'HMI / Controller',
         tagline: 'Touch HMI Terminal with Embedded PLC',
-        image: brImg,
+        image: c70,
       },
       {
         id: 'br-apc2100',
@@ -119,7 +136,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'APC2100',
         type: 'Industrial Box PC',
         tagline: 'Fanless Edge Computing Box PC',
-        image: ipcImg,
+        image: pc,
       },
       {
         id: 'br-x20-io',
@@ -127,7 +144,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'X20 I/O',
         type: 'Remote I/O',
         tagline: 'Modular High Density Distributed I/O',
-        image: ioModuleImg,
+        image: x20,
       },
       {
         id: 'br-acopos-micro',
@@ -135,7 +152,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'ACOPOS Micro',
         type: 'Compact Drive',
         tagline: 'Low-Voltage Stepper & Servo Drive',
-        image: driveRackImg,
+        image: acopos,
       },
     ],
   },
@@ -151,7 +168,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'PNOZ Relays',
         type: 'Safety Module',
         tagline: 'SIL3 / PLe Failsafe Safety Relays',
-        image: pilzImg,
+        image: s4,
       },
       {
         id: 'pilz-pnozmulti',
@@ -159,7 +176,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'PNOZmulti',
         type: 'Safety Controller',
         tagline: 'Modular Configurable Safety Controller',
-        image: pilzImg,
+        image: mb1,
       },
       {
         id: 'pilz-psen-sensors',
@@ -167,7 +184,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'PSEN Switches',
         type: 'RFID Safety Sensor',
         tagline: 'Non-Contact RFID Coded Guard Switches',
-        image: pilzImg,
+        image: lc,
       },
       {
         id: 'pilz-pitestop',
@@ -175,7 +192,7 @@ const BRAND_PRODUCTS_DATA: BrandGroup[] = [
         modelCode: 'PITestop',
         type: 'E-Stop Pushbutton',
         tagline: 'EN ISO 13850 Emergency Stop Buttons',
-        image: pilzImg,
+        image: estop,
       },
     ],
   },
@@ -185,7 +202,7 @@ export const ProductsSection: React.FC = () => {
   const [activeBrand, setActiveBrand] = useState<string>('all');
 
   const openWhatsAppRFQ = (productName: string, modelCode: string) => {
-    const phoneNumber = '919015660504';
+    const phoneNumber = '917078696092';
     const message = `Hello AxtroTech Solutions, I am interested in:\nProduct: ${productName}\nModel: ${modelCode}\nPlease share the quote and availability.`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -206,7 +223,7 @@ export const ProductsSection: React.FC = () => {
               Automation & Control <span className="text-amber-600">Hardware Catalog</span>
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
-              Siemens, B&R, and PILZ components. Direct WhatsApp quotation at +91 90156 60504.
+              Siemens, B&R, and PILZ components. Direct WhatsApp quotation at +91 70786 96092.
             </p>
           </div>
 
@@ -263,7 +280,7 @@ export const ProductsSection: React.FC = () => {
               {/* Compact Brand Header */}
               <div className="flex items-center justify-between bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-sm">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-slate-100 p-1 border border-slate-200 flex items-center justify-center shrink-0">
+                  <div className="w-15 h-15 rounded-lg bg-slate-100 p-1 border border-slate-200 flex items-center justify-center shrink-0">
                     <img src={brand.logoImg} alt={brand.brandName} className="max-h-full max-w-full object-contain" />
                   </div>
                   <h2 className="text-base font-black text-slate-900 tracking-tight">
@@ -342,13 +359,13 @@ export const ProductsSection: React.FC = () => {
             </div>
             <div>
               <h3 className="text-sm font-bold">Direct Wholesale & Retail Orders</h3>
-              <p className="text-xs text-slate-300">Fast quotes and stock availability on WhatsApp at <strong>+91 90156 60504</strong>.</p>
+              <p className="text-xs text-slate-300">Fast quotes and stock availability on WhatsApp at <strong>+91 70786 96092</strong>.</p>
             </div>
           </div>
 
           <button
             onClick={() => {
-              window.open('https://wa.me/919015660504?text=Hello%20AxtroTech%20Solutions,%20I%20have%20an%20inquiry%20regarding%20industrial%20automation%20hardware.', '_blank');
+              window.open('https://wa.me/917078696092?text=Hello%20AxtroTech%20Solutions,%20I%20have%20an%20inquiry%20regarding%20industrial%20automation%20hardware.', '_blank');
             }}
             className="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors shrink-0 flex items-center gap-1.5"
           >

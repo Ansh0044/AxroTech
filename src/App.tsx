@@ -11,6 +11,7 @@ import { ProductsSection } from './components/ProductsSection';
 import { Footer } from './components/Footer';
 import { RFQEstimatorModal } from './components/RFQEstimatorModal';
 import { Calculator } from 'lucide-react';
+import { Phone } from 'lucide-react'
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<'home' | 'about' | 'products'>('home');
@@ -18,7 +19,7 @@ export default function App() {
   const [rfqSubject, setRfqSubject] = useState<string | undefined>(undefined);
 
   const handleOpenRFQ = (subject?: string) => {
-  const phoneNumber = '919015660504';
+  const phoneNumber = '917078696092';
   const message = subject
     ? `Hello AxtroTech Solutions, I would like to request an official quote regarding: ${subject}`
     : `Hello AxtroTech Solutions, I would like to request an official quote and project estimation.`;
@@ -119,9 +120,9 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-40">
         <button
           onClick={() => handleOpenRFQ('Quick Estimate')}
-          className="px-4 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs tracking-wider uppercase shadow-2xl flex items-center gap-2 border-2 border-slate-950 transition-all hover:scale-105"
+          className="px-4 py-3 rounded-full bg-green-500 hover:bg-amber-400 text-slate-950 font-bold text-xs tracking-wider uppercase shadow-2xl flex items-center gap-2 border-2 border-slate-950 transition-all hover:scale-105"
         >
-          <Calculator className="w-4 h-4" />
+          <Phone className="w-4 h-4" />
           <span className="hidden sm:inline">Request Quote</span>
         </button>
       </div>
